@@ -1,0 +1,42 @@
+[profiles."master"]
+user_id = "USERNAME"
+
+[macros.normal]
+"z" = "<C-w>z" # Alternate zoom window
+
+[macros.visual]
+"yy" = "\"+y" # Yank to system clipboard
+"dd" = "\"+d_" # Delete to system clipboard
+"p" = "wl-paste -o -n"
+
+[macros."normal|visual"]
+"<C-H>" = "<C-O>"  # move through jumplist
+"<C-L>" = "<C-I>"  # move through jumplist
+"H" = "<C-W>h"  # switch window
+"J" = "<C-W>j"  # switch window
+"K" = "<C-W>k"  # switch window
+"L" = "<C-W>l"  # switch window
+"s" = "<C-W>s"  # Split
+"v" = "<C-W>v"  # Split
+"m" = "<C-W>m"  # Switch betveen normal & visual
+"Q" = ":quit<Enter>"
+"gc" = ":chats<Enter>"
+"gr" = ":rooms<Enter>"
+"gs" = ":spaces<Enter>"
+"gd" = ":dms<Enter>"
+"q" = "<C-W>q"  # Quit current window
+"w" = "<C-W>o"  # Keep this window and close the rest
+
+[macros.select]
+"md" = ":download<Enter>"
+"mo" = ":open<Enter>"
+
+[settings]
+default_room = "welcome"
+log_level = "debug"
+request_timout = 180
+image_preview = {}
+
+[setting.image_preview]
+protocol.type = "halfblocks"
+protocol.font_size = [ 11, 26 ]
