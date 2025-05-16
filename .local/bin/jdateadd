@@ -9,4 +9,4 @@ else
 	from=$(jdate -g $from +%F)
 fi
 
-jdate -j $(dateadd $from +$add -f %Y/%m/%d) +%W
+jdate -j $(dateadd $from $add -f %Y/%m/%d) +%W
