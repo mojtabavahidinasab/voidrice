@@ -1,0 +1,8 @@
+#!/bin/sh
+
+d1=`jdate -g $1 +%F`
+d2=`jdate -g $2 +%F`
+
+dif=`datediff $d1 $d2`
+
+echo $dif

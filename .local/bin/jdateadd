@@ -1,0 +1,12 @@
+#!/bin/sh
+
+add=$1
+from=$2
+
+if [ -z $2 ]; then
+	from=$(date -I)
+else
+	from=$(jdate -g $from +%F)
+fi
+
+jdate -j $(dateadd $from +$add -f %Y/%m/%d) +%W
