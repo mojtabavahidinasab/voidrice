@@ -1,5 +1,29 @@
 let mapleader =","
 
+let s:lightify = 1
+map <leader>l :call SwitchColorScheme()<CR>
+function! SwitchColorScheme()
+	if s:lightify == 1
+		let s:lightify = 0
+		set background=dark
+	else
+		let s:lightify = 1
+		set background=light
+	endif
+endfunction
+
+map <leader>a :call Rightify()<CR>
+let s:rightify = 1
+function! Rightify()
+	if s:rightify == 1
+		let s:rightify = 0
+		set rl
+	else
+		let s:rightify = 1
+		set norl
+	endif
+endfunction
+
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
 	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
@@ -11,6 +35,9 @@ map ,, :keepp /<++><CR>ca<
 imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'morhetz/gruvbox'
+Plug 'neovim/nvim-lspconfig'
+Plug 'rlue/vim-barbaric'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
@@ -21,16 +48,20 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 call plug#end()
 
+" Add Lua configuration
+source $HOME/.config/nvim/nviminit.lua
+" nnoremap N :lua vim.lsp.buf.hover()<CR>
+
 set title
 set bg=light
 set mouse=a
-set nohlsearch
+"set nohlsearch
 set clipboard+=unnamedplus
 set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
-colorscheme vim
+"colorscheme vim
 
 " Some basics:
 	nnoremap c "_c
@@ -89,6 +120,20 @@ colorscheme vim
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout "%:p"<CR>
+
+" Go next tab.
+	map <leader>] :tabn<CR>
+
+" Go to previous tab.
+	map <leader>[ :tabp<CR>
+
+" Buffers are awesome!!!!!
+	map <leader>e :bnext<CR>
+	map <leader>d :bprev<CR>
+	nnoremap <leader>g :buffers<CR>:buffer<Space>
+
+" Write changes
+	map <leader>w :w<CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !latexmk -c %
