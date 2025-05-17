@@ -54,6 +54,8 @@ call plug#end()
 " Add Lua configuration
 source $HOME/.config/nvim/nviminit.lua
 " nnoremap N :lua vim.lsp.buf.hover()<CR>
+"BidiEnable lr
+"BidiEnable rl
 
 set title
 set bg=dark
