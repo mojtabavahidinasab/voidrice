@@ -30,4 +30,3 @@
 		- gruvbox
 		- barbaric
 		- lsp-config
-		- E
