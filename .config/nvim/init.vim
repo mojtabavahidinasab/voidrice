@@ -1,5 +1,7 @@
 let mapleader =","
 
+map <leader>R :source $HOME/.config/nvim/init.vim<CR>
+
 let s:lightify = 1
 map <leader>l :call SwitchColorScheme()<CR>
 function! SwitchColorScheme()
@@ -35,6 +37,7 @@ map ,, :keepp /<++><CR>ca<
 imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'mcookly/bidi.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rlue/vim-barbaric'
@@ -53,8 +56,10 @@ source $HOME/.config/nvim/nviminit.lua
 " nnoremap N :lua vim.lsp.buf.hover()<CR>
 
 set title
-set bg=light
+set bg=dark
 set mouse=a
+set ic
+set smartcase
 "set nohlsearch
 set clipboard+=unnamedplus
 set noshowmode
@@ -76,7 +81,7 @@ set noshowcmd
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo \| set bg=dark \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
