@@ -1,0 +1,20 @@
+#!/bin/sh
+
+time=$1
+sound=$2
+
+if [ -z $sound ]; then
+	sound=$XDG_DATA_HOME/sounds/alarms/alarm-beep02.ogg
+else
+	if [ -z $(ls $XDG_DATA_HOME/sounds/alarms/ | grep -x "$sound.ogg") ]; then
+		sound=$XDG_DATA_HOME/sounds/alarms/alarm-beep02.ogg
+	else
+		sound=$XDG_DATA_HOME/sounds/alarms/$sound.ogg
+	fi
+fi
+
+if [ -z $time ]; then
+	time=61
+fi
+
+termdown $time --exec-cmd="if [ '{0}' == '1' ]; then sleep 1; while ps acx | grep termdown; do mpv $sound; notify-send FIXME; done; fi" -b
