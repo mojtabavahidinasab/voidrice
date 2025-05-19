@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Get the current clipboard content
+bookmark="$(xclip -o)"
+file="$XDG_DATA_HOME/blue/lists/snippets"
+
+# Check if the bookmark is empty
+if [ -z "$bookmark" ]; then
+    notify-send "Error" "Clipboard is empty. Nothing to bookmark!"
+    exit 1
+fi
+
+
+# Get first word of bookmark
+bookmark_first_word=$(echo "$bookmark" | cut -d' ' -f1)
+
+# Check if the bookmark already exists in the file
+if cut -d' ' -f1 "$file" | grep -qFx "$bookmark_first_word"; then
+    notify-send "Oops." "Already bookmarked!"
+else
+    # Add the bookmark to the file
+    # Get context via dmenu
+    context=$(echo "" | dmenu -p "Enter tags for bookmark:")
+
+    # Combine bookmark and context with two spaces
+    combined="$bookmark  $context"
+    echo "$combined" >> "$file"
+    notify-send "Bookmark added" "$bookmark is now saved to the file"
+fi
