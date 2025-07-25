@@ -19,6 +19,8 @@ do
 		magick "$file" -rotate -90 "$file" ;;
 	"f")
 		magick "$file" -flop "$file" ;;
+	"F")
+		magick "$file" -flip "$file" ;;
 	"y")
 		printf "%s" "$file" | tr -d '\n' | xclip -selection clipboard &&
 		notify-send "$file copied to clipboard" & ;;

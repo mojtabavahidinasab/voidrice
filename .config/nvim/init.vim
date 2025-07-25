@@ -37,8 +37,6 @@ map ,, :keepp /<++><CR>ca<
 imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-Plug 'mcookly/bidi.nvim'
-Plug 'morhetz/gruvbox'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rlue/vim-barbaric'
 Plug 'tpope/vim-surround'
@@ -54,8 +52,6 @@ call plug#end()
 " Add Lua configuration
 source $HOME/.config/nvim/nviminit.lua
 " nnoremap N :lua vim.lsp.buf.hover()<CR>
-"BidiEnable lr
-"BidiEnable rl
 
 set title
 set bg=dark
@@ -68,7 +64,7 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
-"colorscheme vim
+colorscheme vim
 
 " Some basics:
 	nnoremap c "_c

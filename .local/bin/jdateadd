@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ifinstalled "jcal"
+
 add=$1
 from=$2
 

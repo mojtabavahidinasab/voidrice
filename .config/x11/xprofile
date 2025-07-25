@@ -7,8 +7,12 @@ xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger scre
 setbg &			# set the background with the `setbg` script
 #xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment to use Xresources colors/settings on startup
 
-fcitx5 -d
-
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export SDL_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export GLFW_IM_MODULE=ibus
+ibus-daemon -drx &
 autostart="mpd xcompmgr dunst unclutter pipewire remapd"
 
 for program in $autostart; do

@@ -1,0 +1,16 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap J\nunmap K\nmap J nextTab\nmap K previousTab\nunmap b\nunmap B\nmap ا scrollLeft\nmap ت scrollDown\nmap ن scrollUp\nmap م scrollRight\nmap ظا scrollToLeft\nmap أ scrollToBottom\nmap لل scrollToTop\nmap ظم scrollToRight\nmap ة nextTab\nmap » previousTab\nmap ی scrollPageDown\nmap ع scrollPageUp\nmap ب LinkHints.activateMode\nmap إ LinkHints.activateModeToOpenInNewTab\nmap خ Vomnibar.activate\nmap ف Vomnibar.activateInNewTab\nmap لث Vomnibar.activateEditUrl\nmap لٍ Vomnibar.activateEditUrlInNewTab\nmap د performFind\nmap ٔ  performBackwardsFind\nmap آ goBack\nmap « goForward\nmap <a-پ> toggleMuteTab\nmap له focusInput\nmap لب nextFrame\nmap لإ mainFrame\nmap ط removeTab\nmap ٓ  restoreTab\nmap ٌ  moveTabToNewWindow\nmap لس toggleViewSource",
+  "ignoreKeyboardLayout": true,
+  "searchEngines": "# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\nd: https://duckduckgo.com/?q=%s DuckDuckGo\nی: https://duckduckgo.com/?q=%s DuckDuckGo\n: https://start.duckduckgo.com/lite/?q=%s DuckDuckGo Lite\n# az: https://www.amazon.com/s/?field-keywords=%s\n# qw: https://www.qwant.com/?q=%s Qwant\na: https://www.aparat.com/search/%s آپارات\nش: https://www.aparat.com/search/%s آپارات",
+  "settingsVersion": "2.2.1",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://vim-adventures.com/*"
+    }
+  ]
+}

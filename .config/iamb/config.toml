@@ -2,7 +2,7 @@
 user_id = "USERNAME"
 
 [macros.normal]
-"z" = "<C-w>z" # Alternate zoom window
+"f" = "<C-w>z" # Alternate zoom window
 
 [macros.visual]
 "yy" = "\"+y" # Yank to system clipboard
@@ -28,8 +28,8 @@ user_id = "USERNAME"
 "w" = "<C-W>o"  # Keep this window and close the rest
 
 [macros.select]
-"md" = ":download<Enter>"
-"mo" = ":open<Enter>"
+"Md" = ":download<Enter>"
+"Mo" = ":open<Enter>"
 
 [settings]
 default_room = "welcome"

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ifinstalled "jcal"
+
 d1=`jdate -g $1 +%F`
 d2=`jdate -g $2 +%F`
 

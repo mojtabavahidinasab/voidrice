@@ -3,6 +3,8 @@
 time=$1
 sound=$2
 
+ifinstalled "termdown"
+
 if [ -z $sound ]; then
 	sound=$XDG_DATA_HOME/sounds/alarms/alarm-beep02.ogg
 else

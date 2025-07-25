@@ -2,7 +2,7 @@
 
 # Get the current clipboard content
 bookmark="$(xclip -o)"
-file="$XDG_DATA_HOME/blue/lists/snippets"
+file="$XDG_DATA_HOME/larbs/snippets/urls"
 
 # Check if the bookmark is empty
 if [ -z "$bookmark" ]; then

@@ -183,8 +183,8 @@
 #def_key "b"
 #  seek_backward
 #
-#def_key "r"
-#  toggle_repeat
+def_key "r"
+  toggle_repeat
 #
 #def_key "z"
 #  toggle_random
@@ -195,8 +195,8 @@
 #def_key "y"
 #  start_searching
 #
-#def_key "y"
-#  toggle_single
+def_key "y"
+  toggle_single
 #
 #def_key "R"
 #  toggle_consume

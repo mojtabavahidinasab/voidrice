@@ -31,6 +31,11 @@ cmd open ${{
     case $(file --mime-type "$(readlink -f $f)" -b) in
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 	image/vnd.djvu|application/pdf|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
+	application/zip)
+		case "$f" in
+			*.cbz) setsid -f zathura $fx >/dev/null 2>&1 ;;
+			*) notify-send "not specified" "what should zip files be opened with?" ;;
+		esac ;;
         text/*|application/json|inode/x-empty|application/x-subrip) $EDITOR $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	image/svg+xml) display -- $f ;;
