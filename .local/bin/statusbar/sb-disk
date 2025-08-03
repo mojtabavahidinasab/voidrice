@@ -4,11 +4,13 @@
 # $1 should be drive mountpoint, otherwise assumed /.
 
 location=${1:-/}
+nohuman=$(du -hst 104857600 $(ls) | sort -hr)  # threshold 100 Mega bits -> 100 * 1024 * 1024 bits
 
 [ -d "$location" ] || exit
 
 case $BLOCK_BUTTON in
-	1) notify-send "💽 Disk space" "$(df -h --output=target,used,size)" ;;
+	1) notify-send -t 20000 "💽 Disk usage" "$nohuman";;
+	2) notify-send "💽 Disk space" "$(df -h --output=target,used,size)" ;;
 	3) notify-send "💽 Disk module" "\- Shows used hard drive space.
 - Click to show all disk info." ;;
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
