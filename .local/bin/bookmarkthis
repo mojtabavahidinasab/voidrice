@@ -20,7 +20,11 @@ if cut -d' ' -f1 "$file" | grep -qFx "$bookmark_first_word"; then
 else
     # Add the bookmark to the file
     # Get context via dmenu
-    context=$(echo "" | dmenu -p "Enter tags for bookmark:")
+    context=$(echo "" | dmenu -p "$bookmark tags:")
+    if [ $context == "n" ]; then
+	    notify-send "canceled" "operation cancled"
+	    exit 1
+    fi
 
     # Combine bookmark and context with two spaces
     combined="$bookmark  $context"
