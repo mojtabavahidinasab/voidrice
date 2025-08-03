@@ -1,8 +1,75 @@
 let mapleader =","
 
+" persian latex stuff
+autocmd BufRead,BufNewFile *.tex abb نوفصل \chapter{}<Esc><left>
+autocmd BufRead,BufNewFile *.tex abb نوقسمت \section{}<Esc><left>
+autocmd BufRead,BufNewFile *.tex abb نوتورفتگی \indent\indent{}<Esc>
+autocmd BufRead,BufNewFile *.tex abb بدمتن \textenglish{}<Esc>hh
+autocmd BufRead,BufNewFile *.tex abb نومورد \item
+autocmd BufRead,BufNewFile *.tex abb نوموارد \begin{itemize}<NewLine>\end{itemize}<Esc>O
+autocmd BufRead,BufNewFile *.tex abb نوشمارمورد \begin{enumerate}<NewLine>\end{enumerate}<Esc>O
+
+" persian with persian keyboard layout bindings
+nmap و ,
+nmap ش a
+nmap ؤ A
+nmap ذ b
+nmap ‌ B
+nmap ز c
+nmap ژ c
+nmap ی d
+nmap ي D
+nmap ث e
+nmap ٍ E
+nmap ب f
+nmap إ F
+nmap ل g
+nmap أ G
+nmap ا h
+nmap آ H
+nmap ه i
+nmap ّ I
+nmap ت j
+nmap ة J
+nmap ن k
+nmap » K
+nmap م l
+nmap « L
+nmap پ m
+nmap ء M
+nmap د n
+nmap ٔ N
+nmap خ o
+"nmap ] O
+nmap ح p
+"nmap [ P
+nmap ض q
+nmap ْ Q
+nmap ق r
+nmap ً R
+nmap س s
+nmap ئ S
+nmap ف t
+nmap ُ T
+nmap ع u
+nmap َ U
+nmap ر v
+nmap ٰ V
+nmap ص w
+nmap ٌ W
+nmap ط x
+nmap ٓ X
+nmap غ y
+nmap ِ Y
+nmap ظ z
+nmap ك Z
+
+" HTML stuff
+autocmd BufRead,BufNewFile *.html abb HTML <!DOCTYPE html><NewLine><html><NewLine><head><NewLine><meta charset="UTF-8"/><NewLine><title><NewLine><++><NewLine></title><NewLine></head><NewLine><body><NewLine><++><NewLine></body><NewLine></html><Esc>
+
 map <leader>R :source $HOME/.config/nvim/init.vim<CR>
 
-let s:lightify = 1
+let s:lightify = 0
 map <leader>l :call SwitchColorScheme()<CR>
 function! SwitchColorScheme()
 	if s:lightify == 1
@@ -37,6 +104,7 @@ map ,, :keepp /<++><CR>ca<
 imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'mg979/vim-visual-multi'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rlue/vim-barbaric'
 Plug 'tpope/vim-surround'
