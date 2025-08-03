@@ -1,0 +1,8 @@
+#!/bin/sh
+
+language=$(printf "راهنمای ناوبری سامانه\nA Friendly Guide to LARBS" | dmenu -i -l 33)
+
+case $language in
+	"راهنمای ناوبری سامانه") zathura ~/.local/share/larbs/larbs.pdf;;
+	"A Friendly Guide to LARBS") groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -;;
+esac

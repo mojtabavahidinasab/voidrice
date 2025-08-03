@@ -1,0 +1,163 @@
+%xelatex
+\documentclass{article}
+\usepackage[top=1cm,bottom=2cm]{geometry}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{polyglossia}
+\newfontfamily\arabicfont[Script=Arabic]{Amiri}
+%\newfontfamily\englishfont{DejaVu Serif}
+\setmainlanguage{persian}
+\setotherlanguage{english}
+
+\pagestyle{empty}
+\title{راهنمای ناوبری سامانه}
+\author{بنیان‌گذار: لوک اسمیت}
+\date{ویرایش: مجتبی وحیدی نسب}
+
+\newcommand{\s}[1]{\textenglish{Mod+#1}}
+\renewcommand{\maketitle}{
+	\begin{center}
+		{\huge\thetitle}
+
+		{\footnote{\raggedright\textenglish{Luke Smith}}{\theauthor}\hspace{2cm}\thedate}
+	\end{center}
+}
+
+\titleformat{\section}{\Large\bfseries}{}{0cm}{}
+\titleformat{\subsection}{\large\bfseries}{}{0cm}{}
+
+\begin{document}
+\maketitle
+این یک سامانه شخصی‌سازی شده از \footnote{\raggedright\textenglish{LARBS: Luke's Auto Rice Bootstrap Script}}{LARBS} می‌باشد. با کلیدهای \textenglish{h j k l} جابجا شوید. با کلید s درازای سند، نمایشگرتان را پوشش می‌دهد و با کلید a پهنای سند، پهنای نمایشگرتان را پوشش می‌دهد.
+\section{ارزش‌‌ها}
+\begin{itemize}
+	\item اقتصادی: همه برنامه‌ها ساده هستند و منابع کمی مصرف می‌کنند و بسیار گسترش‌پذیرند.
+	\item تخته‌کلید: همه برنامه‌ها با تخته‌کلید مهار می‌شوند و نیازی نیست انگشتان از روی تخته‌کلید برداشته شوند.
+\end{itemize}
+\section{تغییرات کلی تخته‌کلید}
+\begin{itemize}
+	\item \textenglish{CapsLock}: این یک کلید بی‌مصرف در مکان مهمی است. این کلید نقش Esc را دارد.
+	\item \textenglish{Menu}: این نقش کلید Windows اضافی در سمت راست تخته‌کلید را دارد.
+\end{itemize}
+\section{نوار وضعیت}
+\indent\indent{در سمت چپ شماره برچسب را می‌بینید. در سمت راست موارد دیگر مانند تاریخ شمسی(جلالی) و میلادی و صدا و ... . هر یک از این موراد در مسیر \textenglish{\textasciitilde/.local/bin/statusbar/} قرار دارند و می‌توانید آنها را تغییر دهید. همچنین می‌توانید با نگهداشتن کلید Shift و زدن روی هرکدام، آن را تغییر دهید.}
+
+برنامه dwmblocks سرپرست نمایش و بروزرسانی نواروضعیت را دارد. می‌توانید این برنامه را از مسیر \textenglish{\textasciitilde/.local/src/dwmblocks/} تغییر دهید.
+\section{میانبرها}
+\indent\indent{مدیر پنجره dwm سرپرست اجرای میانبرها می‌باشد. می‌تواند در مسیر \textenglish{\textasciitilde/.local/src/dwm/} میانبرها را تغییر دهید. به بزرگ یا کوچک بودن حروف میانبر توجه کنید.}
+\begin{itemize}
+		 \item میانبر \s{Enter} فراخوانی پایانه
+		 \item میانبر \s{q} بستن پنجره
+		 \item میانبر \s{d} فهرست برنامه‌ها برای اجرا
+		 \item میانبر \s{j/k} مابین پنجره‌ها جابجا شوید
+		 \item میانبر \s{Space} پنجره فعال را اصلی می‌کند یا با دومی جابجا می‌کند
+		 \item میانبر \s{z/x} شکاف بین پنجره‌ها را زیاد یا کم می‌کند
+		 \item میانبر \s{a} شکاف را فعال یا غیرفعال می‌کند
+		 \item میانبر \s{A} شکاف را به پیشفرض برمی‌گرداند
+		 \item میانبر \s{Shift+Space} پنجره را شناور می‌کند. پنجره‌های شناور با \s{left/right click} بابجا یا بزرگ و کوچک می‌شوند
+		 \item میانبر \s{s} پنجره را چسبان می‌کند (همراه شما می‌ماند)
+		 \item میانبر \s{b} نوار وضعیت را پنهان و آشکار می‌کند
+\end{itemize}
+\subsection{چیدمان}
+\begin{itemize}
+	\item \s{t} چیدمان
+	\item \s{T} چیدمان
+	\item \s{y} چیدمان
+	\item \s{Y} چیدمان
+	\item \s{u} چیدمان
+	\item \s{U} چیدمان
+	\item \s{i} چیدمان
+	\item \s{I} چیدمان
+	\item \s{f} چیدمان
+	\item \s{F} چیدمان
+	\item \s{o/O} چیدمان
+\end{itemize}
+\subsection{برنامگان}
+\begin{itemize}
+	\item \s{w} مرورگر
+	\item \s{W} وای‌فای
+	\item \s{e} برنامه neomutt برای رایانامه
+	\item \s{E} برنامه abook برای مخاطبین
+	\item \s{r} مدیرپرونده lf را باز می‌کند
+	\item \s{R} سرپرست کار htop را بازمی‌کند
+	\item \s{n} برنامه vimwiki برای یادداشت برداری
+	\item \s{N} برنامه newsboat برای اخبار
+	\item \s{'} ماشین حساب bc را باز و بسته می‌کند
+	\item \s{Shift+Enter} پایانه شناور
+\end{itemize}
+\subsection{برچسب‌ها}
+\begin{itemize}
+	\item \s{(\textpersian{شماره})} به میزکار دیگری می‌روید
+	\item \s{Shift+(\textpersian{شماره})} پنجره را به میز کار دیگری می‌فرستد
+	\item \s{\textpersian{راست/چپ}} به نمایشگر دیگری می‌روید
+	\item \s{Shift+\textpersian{راست/چپ}} پنجره را به نمایشگر دیگری می‌فرستد
+\end{itemize}
+\subsection{سامانه}
+\begin{itemize}
+	\item \s{Q} انتخاب کنید تا نمایشگر را قفل کنید، خارج شوید، خاموش کنید یا خاموش و روشن کنید
+	\item \s{Backspace} انتخاب کنید تا نمایشگر را قفل کنید، خارج شوید، خاموش کنید یا خاموش و روشن کنید
+	\item \s{F1} این سند را نمایش می‌دهد
+	\item \s{F2} ویدیو آموزشی درمورد سامانه ببینید
+	\item \s{F3} نمایشگرتان را انتخاب کنید
+	\item \s{F4} برنامه pulsemixer برای مهار آوا
+	\item \s{F6} ---
+	\item \s{F7} ---
+	\item \s{F9} سوار کردن یک حافظه خارجی
+	\item \s{F10} پیاده کردن یک حافظه خارجی
+	\item \s{F11} نمایش دوربین
+	\item \s{F12} ---
+	\item \s{`} جایگذاری شکلک
+	\item \s{Insert} جایگذاری نشانی اینترنتی. از \textenglish{\textasciitilde/.local/share/larbs/snippets/urls} تغییر بدید
+	\item \s{Shift+Insert} جایگذاری بریده‌های دیگر بجر نشانی اینترنتی. بریده خودتان را در \textenglish{\textasciitilde/.local/share/larbs/snippets/} ذخیره کنید. همچنین کارکرد این میانبر را با تغییر \textenglish{\textasciitilde/.local/bin/snippet} تغییر دهید
+\end{itemize}
+\subsection{آوا}
+\begin{itemize}
+	\item \s{m} پخش کننده موسیقی ncmpcpp را باز می‌کند
+	\item \s{M} بی‌صدا و باصدا کردن
+	\item \s{p} قطع و پخش موسیقی
+	\item \s{P} قطع و پخش موسیقی
+	\item \s{-} صدا را کم می‌کند. کلید Shift را نگهدارید تا بیشتر کم کند
+	\item \s{+} صدا را زیاد می‌کند. کلید Shift را نگه دارید تا بیشتر زیاد کند
+	\item \s{.} موسیقی بعدی در قهرست را پخش می‌کند
+	\item \s{,} موسیقی قبلی در فهرست را پخش می‌کند
+	\item \s{>} فعال و غیرفعال کردن تکرار فهرست‌پخش
+	\item \s{<} بازآغاز موسیقی کنونی
+	\item \s{\lbrack} ده ثانیه عقبگرد موسیقی
+	\item \s{\rbrack} ده ثانیه جلوگرد موسیقی
+\end{itemize}
+\subsection{ضبط}
+\begin{itemize}
+		 \item کلید PrintScreen عکس‌ازنمایشگر می‌گیرد
+		 \item میانبر \textenglish{ShiftPrintScreen} گزینه‌های بیشتر برای عکس‌ازمنایشگر
+		 \item \s{PrintScreen} گزینه برای ضبط نمایشگر
+		 \item میانبر \s{Delete} ضبط کردن را پایان می‌دهد
+		 \item میانبر \s{Ctrl+PrintScreen} کلیدهای فشرده شده را نمایش می‌دهد که برای ضبط نمایشگر بدرد می‌خورد
+\end{itemize}
+\appendix
+\section{پیوست}
+\raggedright\href{https://lukesmith.xyz}{https://lukesmith.xyz}\bigskip
+
+\raggedright\href{https://larbs.xyz}{https://larbs.xyz}\bigskip
+
+\raggedright\href{https://github.com/lukesmithxyz/LARBS}{https://github.com/lukesmithxyz/LARBS}\bigskip
+
+\raggedright\href{https://github.com/mojtabavahidinasab/LARBS}{https://github.com/mojtabavahidinasab/LARBS}\bigskip
+
+\raggedright\href{https://github.com/lukesmithxyz/voidrice}{https://github.com/lukesmithxyz/voidrice}\bigskip
+
+\raggedright\href{https://github.com/mojtabavahidinasab/voidrice}{https://github.com/mojtabavahidinasab/voidrice}\bigskip
+
+\raggedright\href{https://github.com/lukesmithxyz/dwm}{https://github.com/lukesmithxyz/dwm}\bigskip
+
+\raggedright\href{https://github.com/mojtabavahidinasab/dwm}{https://github.com/mojtabavahidinasab/dwm}\bigskip
+
+\raggedright\href{https://github.com/lukesmithxyz/dwmblocks}{https://github.com/lukesmithxyz/dwmblocks}\bigskip
+
+\raggedright\href{https://github.com/mojtabavahidinasab/dwmblocks}{https://github.com/mojtabavahidinasab/dwmblocks}\bigskip
+
+\raggedright\href{https://github.com/lukesmithxyz/st}{https://github.com/lukesmithxyz/st}\bigskip
+
+\raggedright\href{https://github.com/mojtabavahidinasab/st}{https://github.com/mojtabavahidinasab/st}\bigskip
+
+\end{document}
