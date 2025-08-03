@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ifinstalled "jcal"
+
+case $BLOCK_BUTTON in
+	1) notify-send -t 20000 "تاریخ جلالی" "$(jcal -p | sed 's/\x1B\[[0-9;]*[a-zA-Z]//g' | sed "s/\<$(jdate +'%W'| cut -d '/' -f3)\>/<b><span color='red'>&<\/span><\/b>/")";;
+	2) notify-send -t 20000 "تاریخ جلالی" "$(jcal -p | sed 's/\x1B\[[0-9;]*[a-zA-Z]//g' | sed "s/\<$(jdate +'%W'| cut -d '/' -f3)\>/<b><span color='red'>&<\/span><\/b>/")";;
+	3) notify-send -t 20000 "تاریخ جلالی" "$(jcal -p | sed 's/\x1B\[[0-9;]*[a-zA-Z]//g' | sed "s/\<$(jdate +'%W'| cut -d '/' -f3)\>/<b><span color='red'>&<\/span><\/b>/")";;
+	#2) notify-send "همم" "کلید میانی موش چکار کند؟";;
+	#3) notify-send "📅 ابزار تاریخ جلالی" "تاریخ ماه کنونی را نشان می‌دهد" ;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+j=$(jdate "+%G %d %V %Y" | fribidi --nopad)
+echo "$j"
